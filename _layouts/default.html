@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
-
     {% if site.google_analytics %}
       <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
       <script>
@@ -13,79 +12,109 @@
     {% endif %}
     <meta charset="UTF-8">
 
-{% seo %}
+    {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Tutorial-focused CSS -->
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/tutorial.css' | relative_url }}">
   </head>
   <body>
-   
+    {% if page.url != '/' %}
+    <!-- Clean breadcrumb navigation for non-home pages -->
+    <nav class="nav-breadcrumb">
+        <a href="{{ '/' | relative_url }}">🏠 Home</a>
+        {% if page.track %} • <a href="{{ '/tracks/' | append: page.track | relative_url }}">{{ page.track | capitalize }} Track</a>{% endif %}
+        {% if page.url != '/' and page.title %} • {{ page.title }}{% endif %}
+    </nav>
+    {% endif %}
 
+    {% if page.url == '/' %}
+    <!-- Full header for homepage only -->
     <header class="page-header" role="banner">
-      <center><a href="http://dockerlabs.collabnix.com"><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/moby_large.png"></a></center>
-      <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/Collabnix/dockerlabs" data-size="large" data-show-count="true" aria-label="Star Collabnix/dockerlabs on GitHub">Star</a>
-      <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/Collabnix/dockerlabs/fork" data-size="large" data-show-count="true" aria-label="Fork Collabnix/dockerlabs on GitHub">Fork</a>
-     <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/collabnix/dockerlabs/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch collabnix/dockerlabs on GitHub">Watch</a>
-      <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/collabnix" data-size="large" data-show-count="true" aria-label="Follow @collabnix on GitHub">Follow @collabnix</a>
-      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2> 
-      {% if site.github.is_project_page %}
-        <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
-      {% endif %}
-      {% if site.show_downloads %}
-        <a href="https://join.slack.com/t/collabnix/shared_invite/zt-1gank9ask-YM4ZbCtRq2id9G2o01ItgA" class="btn">Join Slack</a>
-     {% endif %}
-      {% if site.show_downloads %}
-        <a href="https://collabnix.com/docker-cheatsheet/" class="btn">Docker Cheatsheet</a>
-     {% endif %}
-        {% if site.show_downloads %}
-        <a href="https://collabnix.com/docker-compose-cheatsheet/" class="btn">Docker Compose Cheatsheet</a>
-     {% endif %}
-        {% if site.show_downloads %}
-        <a href="https://twitter.com/collabnix" class="btn">Follow us on Twitter</a>
-     {% endif %}
-          
+      <center><a href="http://dockerlabs.collabnix.com"><img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/moby_large.png" alt="DockerLabs" style="max-width: 200px;"></a></center>
+      
+      <!-- GitHub buttons -->
+      <div style="text-align: center; margin: 1em 0;">
+        <a class="github-button" href="https://github.com/Collabnix/dockerlabs" data-size="large" data-show-count="true" aria-label="Star Collabnix/dockerlabs on GitHub">Star</a>
+        <a class="github-button" href="https://github.com/Collabnix/dockerlabs/fork" data-size="large" data-show-count="true" aria-label="Fork Collabnix/dockerlabs on GitHub">Fork</a>
+        <a class="github-button" href="https://github.com/collabnix/dockerlabs/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch collabnix/dockerlabs on GitHub">Watch</a>
+        <a class="github-button" href="https://github.com/collabnix" data-size="large" data-show-count="true" aria-label="Follow @collabnix on GitHub">Follow @collabnix</a>
+      </div>
+      
+      <!-- Quick action buttons -->
+      <div style="text-align: center; margin: 2em 0;">
+        <a href="https://join.slack.com/t/collabnix/shared_invite/zt-1gank9ask-YM4ZbCtRq2id9G2o01ItgA" class="btn">💬 Join Slack</a>
+        <a href="https://discord.gg/QEkCXAXYSe" class="btn">🎮 Join Discord</a>
+        <a href="https://collabnix.com/docker-cheatsheet/" class="btn">📄 Docker Cheatsheet</a>
+        <a href="https://twitter.com/collabnix" class="btn">🐦 Follow Twitter</a>
+      </div>
     </header>
+    {% else %}
+    <!-- Minimal header for tutorial pages -->
+    <header style="background: #f6f8fa; padding: 1em 0; margin-bottom: 2em; border-bottom: 1px solid #e1e4e8;">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <a href="{{ '/' | relative_url }}" style="text-decoration: none; color: #24292e;">
+          <img src="https://raw.githubusercontent.com/collabnix/dockerlabs/master/images/moby_large.png" alt="DockerLabs" style="height: 40px; vertical-align: middle;">
+          <span style="margin-left: 0.5em; font-weight: 600; font-size: 1.2em;">DockerLabs</span>
+        </a>
+      </div>
+    </header>
+    {% endif %}
 
     <main id="content" class="main-content" role="main">
-      
       {{ content }}
-    
-      
-      <footer class="site-footer">
-        
-       
-     
-              <h3> Practice Docker Tutorial </h3>
-        <button> <a href=" https://www.onworks.net/runos/start-os.html?home=init&os=ubuntu-16.04.6-desktop-i386"> free Ubuntu VM </a></button>
-    
-        <div class="hackr-widget" data-tutorial="dockerlabs-docker-and-kubernetes" data-type="1"></div><script src="https://hackr.io/widget.js?v=1.0"></script>
-        {% if site.github.is_project_page %}
-        <h3> Join Collabnix Discord Channel </h3>
-        
-       <iframe src="https://discordapp.com/widget?id=1020180904129335379&theme=dark" width="830" height="500" allowtransparency="true" frameborder="0"></iframe>
-       <a class="twitter-timeline" data-width="1200" data-height="500" href="https://twitter.com/collabnix?ref_src=twsrc%5Etfw">Tweets by collabnix</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-             
-          <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
-        {% endif %}
-              {% if site.show_downloads %}  
-      {% endif %}
-       <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
-         <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7198565.js"></script>
-<!-- End of HubSpot Embed Code -->
-         <div id="wcb" class="carbonbadge"></div>
-<script src="https://unpkg.com/website-carbon-badges@1.1.1/b.min.js" defer></script>
-        </span> 
-      </footer>
     </main>
-    <!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    {% if page.url == '/' %}
+    <!-- Full footer for homepage -->
+    <footer class="site-footer">
+      <h3>Practice Docker Tutorial</h3>
+      <button><a href="https://www.onworks.net/runos/start-os.html?home=init&os=ubuntu-16.04.6-desktop-i386">Free Ubuntu VM</a></button>
+      
+      <div class="hackr-widget" data-tutorial="dockerlabs-docker-and-kubernetes" data-type="1"></div>
+      <script src="https://hackr.io/widget.js?v=1.0"></script>
+      
+      {% if site.github.is_project_page %}
+      <h3>Join Collabnix Discord Channel</h3>
+      <iframe src="https://discordapp.com/widget?id=1020180904129335379&theme=dark" width="100%" height="400" allowtransparency="true" frameborder="0" style="max-width: 830px;"></iframe>
+      <a class="twitter-timeline" data-width="100%" data-height="400" href="https://twitter.com/collabnix?ref_src=twsrc%5Etfw">Tweets by collabnix</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      
+      <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
+      {% endif %}
+      
+      <span class="site-footer-credits">
+        This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        <!-- Start of HubSpot Embed Code -->
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7198565.js"></script>
+        <!-- End of HubSpot Embed Code -->
+        <div id="wcb" class="carbonbadge"></div>
+        <script src="https://unpkg.com/website-carbon-badges@1.1.1/b.min.js" defer></script>
+      </span>
+    </footer>
+    {% else %}
+    <!-- Clean footer for tutorial pages -->
+    <footer style="margin-top: 4em; padding: 2em 0; border-top: 1px solid #e1e4e8; text-align: center; color: #6a737d; background: #f6f8fa;">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <p>
+          <a href="{{ '/' | relative_url }}">← Back to Home</a> • 
+          <a href="{{ '/CONTRIBUTING.md' | relative_url }}">Contribute</a> • 
+          <a href="https://github.com/collabnix/dockerlabs/issues">Report Issue</a>
+        </p>
+        <p>Built with ❤️ by the <a href="https://collabnix.com">Collabnix Community</a></p>
+        <div style="margin-top: 1em;">
+          <a href="https://discord.gg/QEkCXAXYSe" style="margin: 0 0.5em;">💬 Discord</a>
+          <a href="https://join.slack.com/t/collabnix/shared_invite/zt-1gank9ask-YM4ZbCtRq2id9G2o01ItgA" style="margin: 0 0.5em;">📱 Slack</a>
+          <a href="https://twitter.com/collabnix" style="margin: 0 0.5em;">🐦 Twitter</a>
+        </div>
+      </div>
+    </footer>
+    {% endif %}
+
+    <!-- Scripts -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
 </html>
