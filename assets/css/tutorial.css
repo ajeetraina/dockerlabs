@@ -1,385 +1,119 @@
-/* Modern card-based layout for DockerLabs */
+/* Clean tutorial-focused styling inspired by docker-curriculum.com */
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: #24292e;
-    max-width: 1200px;
+    color: #333;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background: #f6f8fa;
+    background: #fff;
 }
 
-/* Card-based layout styles */
-.intro-cards, .track-cards, .quickstart-cards, .feature-cards, .app-cards, .resource-cards, .community-cards, .next-steps-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
+/* Clean navigation */
+.nav-breadcrumb {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #eee;
 }
 
-.testimonial-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.card {
-    background: white;
-    border: 1px solid #e1e4e8;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    border-color: #0366d6;
-}
-
-.card h3 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    color: #24292e;
-    font-size: 1.25rem;
-    font-weight: 600;
-}
-
-.card p {
-    margin-bottom: 1rem;
-    color: #586069;
-}
-
-.card ul {
-    margin: 0;
-    padding-left: 1.5rem;
-}
-
-.card li {
-    margin-bottom: 0.5rem;
-}
-
-/* Track cards */
-.track-card {
-    text-align: center;
-    position: relative;
-    min-height: 300px;
-}
-
-.track-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-.track-card.beginner {
-    border-left: 4px solid #28a745;
-}
-
-.track-card.beginner:hover {
-    border-left-color: #28a745;
-    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.15);
-}
-
-.track-card.intermediate {
-    border-left: 4px solid #ffc107;
-}
-
-.track-card.intermediate:hover {
-    border-left-color: #ffc107;
-    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.15);
-}
-
-.track-card.advanced {
-    border-left: 4px solid #dc3545;
-}
-
-.track-card.advanced:hover {
-    border-left-color: #dc3545;
-    box-shadow: 0 8px 25px rgba(220, 53, 69, 0.15);
-}
-
-/* Feature cards */
-.feature-card {
-    border-left: 4px solid #0366d6;
-}
-
-.feature-card:hover {
-    border-left-color: #0366d6;
-    box-shadow: 0 8px 25px rgba(3, 102, 214, 0.15);
-}
-
-.feature-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    display: block;
-    text-align: center;
-}
-
-/* Community cards */
-.community-card {
-    text-align: center;
-}
-
-.community-card.discord {
-    border-left: 4px solid #7289da;
-}
-
-.community-card.slack {
-    border-left: 4px solid #4a154b;
-}
-
-.community-card.twitter {
-    border-left: 4px solid #1da1f2;
-}
-
-.community-card.github {
-    border-left: 4px solid #333;
-}
-
-.community-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-/* Resource cards */
-.resource-card {
-    border-left: 4px solid #6f42c1;
-}
-
-.resource-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    display: block;
-    text-align: center;
-}
-
-/* App cards */
-.app-card {
-    border-left: 4px solid #fd7e14;
-    text-align: center;
-}
-
-.app-card h3 {
-    margin-bottom: 1rem;
-}
-
-.app-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.app-links a {
-    background: #f6f8fa;
-    padding: 0.5rem;
-    border-radius: 6px;
-    text-decoration: none;
+.nav-breadcrumb a {
     color: #0366d6;
-    transition: background 0.2s;
-}
-
-.app-links a:hover {
-    background: #e1e4e8;
     text-decoration: none;
 }
 
-/* Card meta information */
-.card-meta {
-    display: flex;
-    justify-content: space-between;
-    margin: 1rem 0;
-    font-size: 0.9rem;
-    color: #6a737d;
-    padding-top: 1rem;
-    border-top: 1px solid #e1e4e8;
+/* Typography hierarchy */
+h1 {
+    font-size: 2.5em;
+    font-weight: 300;
+    margin-bottom: 0.5em;
+    color: #2c3e50;
 }
 
-/* Buttons */
-.card-button, .community-button {
-    display: inline-block;
-    background: linear-gradient(135deg, #0366d6 0%, #0256cc 100%);
-    color: white !important;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
+h2 {
+    font-size: 1.8em;
+    font-weight: 400;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    color: #34495e;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.3em;
+}
+
+h3 {
+    font-size: 1.3em;
     font-weight: 500;
-    margin-top: 1rem;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    color: #2c3e50;
 }
 
-.card-button:hover, .community-button:hover {
-    background: linear-gradient(135deg, #0256cc 0%, #044289 100%);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(3, 102, 214, 0.3);
-    text-decoration: none;
+h4 {
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
+    color: #2c3e50;
 }
 
-/* Next steps cards */
-.next-card {
-    text-align: center;
-    padding: 2rem 1.5rem;
-}
-
-.step-number {
-    background: linear-gradient(135deg, #0366d6 0%, #0256cc 100%);
-    color: white;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 1.25rem;
-    margin: 0 auto 1rem;
-    box-shadow: 0 4px 12px rgba(3, 102, 214, 0.3);
-}
-
-.path-links {
-    display: flex;
-    gap: 0.75rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-}
-
-.path-links a {
-    background: #f6f8fa;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    color: #0366d6;
-    border: 1px solid #e1e4e8;
-    transition: all 0.2s ease;
-}
-
-.path-links a:hover {
-    background: #0366d6;
-    color: white;
-    transform: translateY(-1px);
-    text-decoration: none;
-}
-
-/* Testimonial cards */
-.testimonial-card {
-    background: linear-gradient(135deg, #f6f8fa 0%, #ffffff 100%);
-    border-left: 4px solid #0366d6;
-    border-radius: 12px;
-    position: relative;
-}
-
-.testimonial-card::before {
-    content: '"';
-    font-size: 4rem;
-    color: #e1e4e8;
-    position: absolute;
-    top: 0.5rem;
-    left: 1rem;
-    font-family: serif;
-}
-
-.quote {
-    font-style: italic;
-    margin-bottom: 1rem;
-    padding-left: 2rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.author {
-    font-weight: 600;
-    color: #0366d6;
-    text-align: right;
-    margin-top: 1rem;
-}
-
-/* Contributors grid */
-.contributors-grid {
-    text-align: center;
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid #e1e4e8;
-    margin: 2rem 0;
-}
-
-.contributors-grid img {
-    border-radius: 50%;
-    margin: 0.5rem;
-    transition: transform 0.2s;
-}
-
-.contributors-grid img:hover {
-    transform: scale(1.1);
-}
-
-/* Code blocks */
-pre {
-    background: #f6f8fa;
-    border: 1px solid #e1e4e8;
-    border-radius: 8px;
-    padding: 1rem;
-    overflow-x: auto;
-    margin: 1rem 0;
-    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
-}
-
+/* Code styling */
 code {
-    background: #f6f8fa;
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
+    background: #f8f9fa;
+    padding: 2px 6px;
+    border-radius: 3px;
     font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
     font-size: 0.9em;
-    color: #e36209;
+    color: #e74c3c;
+}
+
+pre {
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 1em 1.5em;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 1.5em 0;
 }
 
 pre code {
     background: transparent;
-    color: #24292e;
+    color: #2c3e50;
     padding: 0;
 }
 
-/* Typography */
-h1 {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 300;
-    margin-bottom: 0.5rem;
-    color: #24292e;
-    background: linear-gradient(135deg, #0366d6 0%, #6f42c1 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+/* Lists */
+ul, ol {
+    padding-left: 2em;
 }
 
-h2 {
-    font-size: 2rem;
+li {
+    margin-bottom: 0.5em;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: 0.9em;
+}
+
+th, td {
+    padding: 0.8em;
+    text-align: left;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+th {
+    background-color: #f6f8fa;
     font-weight: 600;
-    margin: 3rem 0 1.5rem;
     color: #24292e;
-    text-align: center;
-    position: relative;
 }
 
-h2::after {
-    content: '';
-    display: block;
-    width: 4rem;
-    height: 3px;
-    background: linear-gradient(135deg, #0366d6 0%, #6f42c1 100%);
-    margin: 0.5rem auto;
-    border-radius: 2px;
+tr:hover {
+    background-color: #f6f8fa;
 }
 
 /* Links */
@@ -392,124 +126,164 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Badges and shields */
-img[alt*="shield"] {
+/* Blockquotes */
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 1em;
+    color: #6a737d;
+    margin: 1.5em 0;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Badge/Shield images */
+img[alt*="stars"], img[alt*="Discord"], img[alt*="contributors"], img[alt*="Twitter"] {
     margin: 0 0.25rem;
+}
+
+/* Contributor avatars */
+img[width="48px"] {
+    border-radius: 50%;
+    margin: 0.5em;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    border-top: 1px solid #e1e4e8;
+    margin: 3em 0;
+}
+
+/* Center alignment utilities */
+[align="center"] {
+    text-align: center;
+}
+
+/* Emphasis styling */
+strong {
+    font-weight: 600;
+    color: #24292e;
+}
+
+em {
+    font-style: italic;
+}
+
+/* Section spacing */
+div {
+    margin-bottom: 1rem;
+}
+
+/* Focus styles for accessibility */
+a:focus {
+    outline: 2px solid #0366d6;
+    outline-offset: 2px;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
     body {
         padding: 10px;
+        font-size: 16px;
     }
     
     h1 {
-        font-size: 2rem;
+        font-size: 2em;
     }
     
-    .intro-cards, .track-cards, .quickstart-cards, .feature-cards, .app-cards, .resource-cards, .community-cards, .next-steps-cards {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    h2 {
+        font-size: 1.5em;
     }
     
-    .testimonial-cards {
-        grid-template-columns: 1fr;
+    h3 {
+        font-size: 1.2em;
     }
     
-    .card {
-        padding: 1rem;
+    pre {
+        padding: 0.8em;
+        font-size: 0.9em;
     }
     
-    .path-links {
-        flex-direction: column;
-        align-items: center;
+    table {
+        font-size: 0.8em;
     }
     
-    .card-meta {
-        flex-direction: column;
-        gap: 0.5rem;
+    th, td {
+        padding: 0.5em;
     }
 }
 
 @media (max-width: 480px) {
-    .track-icon, .feature-icon, .community-icon {
-        font-size: 2rem;
+    body {
+        padding: 5px;
     }
     
-    .step-number {
-        width: 2.5rem;
-        height: 2.5rem;
-        font-size: 1rem;
+    h1 {
+        font-size: 1.8em;
     }
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    
+    h2 {
+        font-size: 1.3em;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.card {
-    animation: fadeInUp 0.6s ease-out;
 }
 
 /* Print styles */
 @media print {
     body {
-        background: white;
         max-width: none;
         padding: 0;
+        font-size: 12pt;
+        line-height: 1.4;
+        color: black;
+        background: white;
     }
     
-    .card {
-        border: 1px solid #ccc;
-        box-shadow: none;
-        page-break-inside: avoid;
-        margin-bottom: 1rem;
-    }
-    
-    .community-cards,
-    .next-steps-cards {
-        display: none;
-    }
-}
-
-/* Focus styles for accessibility */
-.card-button:focus, .community-button:focus {
-    outline: 2px solid #0366d6;
-    outline-offset: 2px;
-}
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-    body {
-        background: #0d1117;
-        color: #c9d1d9;
-    }
-    
-    .card {
-        background: #161b22;
-        border-color: #30363d;
-        color: #c9d1d9;
-    }
-    
-    .card h3 {
-        color: #f0f6fc;
+    a {
+        color: #000;
+        text-decoration: underline;
     }
     
     pre {
-        background: #161b22;
-        border-color: #30363d;
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
     }
     
-    code {
-        background: #161b22;
-        color: #79c0ff;
+    h1, h2, h3 {
+        page-break-after: avoid;
     }
+    
+    table {
+        page-break-inside: avoid;
+    }
+}
+
+/* Clean spacing for better readability */
+p {
+    margin-bottom: 1em;
+}
+
+/* Special styling for intro text */
+body > p:first-of-type {
+    font-size: 1.1em;
+    color: #586069;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+/* Button-like links (for community links) */
+a[href*="discord"], a[href*="slack"], a[href*="twitter"] {
+    display: inline-block;
+    margin: 0.25em;
+}
+
+/* Emoji consistency */
+img.emoji {
+    width: 1em;
+    height: 1em;
+    margin: 0 0.1em;
+    vertical-align: -0.1em;
 }
