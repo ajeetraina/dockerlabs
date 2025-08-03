@@ -1,3 +1,81 @@
-show_downloads: true
-google_analytics:
+# DockerLabs Site Configuration
+
+title: "DockerLabs - Complete Docker Tutorial"
+description: "A comprehensive, hands-on Docker learning platform for everyone"
+baseurl: ""
+url: "https://dockerlabs.collabnix.com"
+
+# Repository info
+repository: "collabnix/dockerlabs"
+
+# Theme and plugins
 theme: jekyll-theme-cayman
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Custom settings for tutorial layout
+tutorial_style: true
+enable_search: true
+show_navigation: true
+show_downloads: true
+
+# Google Analytics (preserve existing)
+google_analytics:
+
+# Custom CSS
+sass:
+  sass_dir: assets/css
+  style: compressed
+
+# Collections for organized content
+collections:
+  tracks:
+    output: true
+    permalink: /:collection/:name/
+  labs:
+    output: true
+    permalink: /:collection/:name/
+  tools:
+    output: true
+    permalink: /:collection/:name/
+  industry:
+    output: true
+    permalink: /:collection/:name/
+
+# Default layout for different content types
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "tutorial"
+  - scope:
+      path: ""
+      type: "tracks"
+    values:
+      layout: "track"
+  - scope:
+      path: ""
+      type: "labs"
+    values:
+      layout: "lab"
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Exclude files from processing
+exclude:
+  - vendor/
+  - .bundle/
+  - .sass-cache/
+  - .jekyll-cache/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - README_build.md
