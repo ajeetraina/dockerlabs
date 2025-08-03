@@ -2,543 +2,358 @@
 
 *A comprehensive, hands-on Docker learning platform*
 
+**≡** [Beginner](#beginner) • [Intermediate](#intermediate) • [Advanced](#advanced) • [Community](#community)
+
+---
+
 ![stars](https://img.shields.io/github/stars/collabnix/dockerlabs)
 ![Discord](https://img.shields.io/discord/1020180904129335379)
 ![GitHub contributors](https://img.shields.io/github/contributors/collabnix/dockerlabs)
 ![Twitter](https://img.shields.io/twitter/follow/collabnix?style=social)
 
-<div align="center">
+Written and maintained by the [Collabnix Community](https://collabnix.com) • [⭐ Star us on GitHub](https://github.com/collabnix/dockerlabs)
 
-**Written and maintained by the [Collabnix Community](https://collabnix.com)**
+## Introduction
 
-[⭐ Star us on GitHub](https://github.com/collabnix/dockerlabs) • [💬 Join Discord](https://discord.gg/QEkCXAXYSe) • [📱 Join Slack](https://launchpass.com/collabnix)
+**What is DockerLabs?**
 
-</div>
+DockerLabs is a comprehensive Docker learning platform designed to take you from complete beginner to Docker expert. Unlike other tutorials that focus on theory, we believe in **hands-on learning**. Every concept is paired with practical labs that you can run right in your browser or on your local machine.
 
----
+**What makes this different?**
 
-## 🚀 What is DockerLabs?
+- **500+ Interactive Labs** - Learn by doing, not just reading
+- **Progressive Learning Path** - Each lab builds on the previous one  
+- **Real-world Examples** - Industry use cases and production scenarios
+- **Community Driven** - Contributed by 1000+ developers worldwide
+- **Browser-based** - No infrastructure required for most labs
 
-<div class="intro-cards">
+Due to containerization benefits, Docker skills are in high demand. Companies like Netflix, Spotify, and Airbnb use Docker extensively. This tutorial will give you the practical skills these companies are looking for.
 
-<div class="card">
-<h3>🎯 Hands-On Learning</h3>
-<p><strong>500+ Interactive Labs</strong><br>Learn by doing, not just reading. Every concept is paired with practical exercises.</p>
-</div>
+## What will this tutorial teach me?
 
-<div class="card">
-<h3>📈 Progressive Path</h3>
-<p><strong>Beginner to Expert</strong><br>Each lab builds on the previous one, taking you from basics to production deployment.</p>
-</div>
+This tutorial aims to be your **complete Docker journey**. By the end, you'll be able to:
 
-<div class="card">
-<h3>🌐 Browser-Based</h3>
-<p><strong>No Infrastructure Required</strong><br>Run most labs directly in your browser or on your local machine.</p>
-</div>
+- Build and deploy containerized applications
+- Use Docker in development workflows  
+- Implement Docker security best practices
+- Deploy to cloud platforms (AWS, GCP, Azure)
+- Manage containers at scale with orchestration
 
-<div class="card">
-<h3>🤝 Community Driven</h3>
-<p><strong>1000+ Contributors</strong><br>Real-world examples and industry use cases from the community.</p>
-</div>
-
-</div>
+We'll start with the basics and progressively build to advanced topics like Docker Swarm, Kubernetes integration, and production deployment strategies.
 
 ---
 
-## 🎓 Learning Tracks
+## Getting Started
 
-<div class="track-cards">
+This tutorial contains three main learning tracks, each building on the previous one. You can jump to any section, but we recommend following the path sequentially.
 
-<div class="card track-card beginner">
-<div class="track-icon">🔰</div>
-<h3>Beginner Track</h3>
-<p><strong>Perfect for newcomers</strong></p>
-<ul>
-<li>Docker fundamentals</li>
-<li>Images & containers</li>
-<li>Basic networking</li>
-<li>Volume management</li>
-</ul>
-<div class="card-meta">
-<span class="duration">⏱️ ~8 hours</span>
-<span class="labs">📚 40 labs</span>
-</div>
-<a href="./beginners/README.md" class="card-button">Start Learning →</a>
-</div>
+**Prerequisites:**
+- Basic command line familiarity
+- A computer with Docker installed ([Installation Guide](./workshop/docker/dockerhub))
+- Curiosity and willingness to experiment!
 
-<div class="card track-card intermediate">
-<div class="track-icon">🎯</div>
-<h3>Intermediate Track</h3>
-<p><strong>Level up your skills</strong></p>
-<ul>
-<li>Docker Compose</li>
-<li>Multi-container apps</li>
-<li>Advanced networking</li>
-<li>Docker Swarm</li>
-</ul>
-<div class="card-meta">
-<span class="duration">⏱️ ~12 hours</span>
-<span class="labs">📚 50 labs</span>
-</div>
-<a href="./intermediate/README.md" class="card-button">Continue Journey →</a>
-</div>
-
-<div class="card track-card advanced">
-<div class="track-icon">🚀</div>
-<h3>Advanced Track</h3>
-<p><strong>Master production</strong></p>
-<ul>
-<li>Security best practices</li>
-<li>Performance optimization</li>
-<li>Production deployment</li>
-<li>Monitoring & logging</li>
-</ul>
-<div class="card-meta">
-<span class="duration">⏱️ ~10 hours</span>
-<span class="labs">📚 31 labs</span>
-</div>
-<a href="./advanced/README.md" class="card-button">Become Expert →</a>
-</div>
-
-</div>
+**Time Investment:**
+- **Beginner Track**: ~8 hours (40 labs)
+- **Intermediate Track**: ~12 hours (50 labs)
+- **Advanced Track**: ~10 hours (31 labs)
 
 ---
 
-## 🔥 Quick Start
+## 🔰 Beginner Track
+*Perfect for newcomers to containerization*
 
-<div class="quickstart-cards">
+**What you'll learn:** Docker fundamentals, basic commands, working with images and containers
 
-<div class="card">
-<h3>1️⃣ Hello Docker</h3>
-<p>Test your Docker installation:</p>
-<pre><code>$ docker run hello-world</code></pre>
-<p>✅ See "Hello from Docker!" message</p>
-</div>
+### Hello Docker
+Let's start with the classic "Hello World" to make sure your Docker installation works:
 
-<div class="card">
-<h3>2️⃣ Your First Container</h3>
-<p>Run an interactive Ubuntu container:</p>
-<pre><code>$ docker run -it ubuntu bash</code></pre>
-<p>🎉 You're now inside a container!</p>
-</div>
+```bash
+$ docker run hello-world
+```
 
-<div class="card">
-<h3>3️⃣ Choose Your Path</h3>
-<p>Select your learning track:</p>
-<ul>
-<li><a href="./beginners/README.md">🔰 New to Docker</a></li>
-<li><a href="./intermediate/README.md">🎯 Know the basics</a></li>
-<li><a href="./advanced/README.md">🚀 Ready for production</a></li>
-</ul>
-</div>
+If you see a "Hello from Docker!" message, you're ready to continue! This simple command demonstrates the core Docker workflow: Docker downloads an image, creates a container, runs it, and cleans up.
 
-</div>
+### Your First Real Container
+Now let's run something more interesting - an interactive Ubuntu container:
 
----
+```bash
+$ docker run -it ubuntu bash
+```
 
-## 🛠️ Latest Docker Features
+Congratulations! You're now inside a Ubuntu container. Try these commands:
+```bash
+# ls -la
+# cat /etc/os-release
+# exit
+```
 
-<div class="feature-cards">
+**What just happened?** Docker downloaded an Ubuntu image, created a running container from it, and gave you an interactive shell. The `-it` flags provided an interactive terminal.
 
-<div class="card feature-card">
-<div class="feature-icon">🔍</div>
-<h3>Docker Scout</h3>
-<p><strong>Software Supply Chain Security</strong></p>
-<p>Scan containers for vulnerabilities and get actionable security insights.</p>
-<div class="card-links">
-<a href="https://github.com/collabnix/docker-scout-community">📚 2 Labs</a>
-<a href="https://www.docker.com/resources/scout-cheat-sheet/">📄 Cheatsheet</a>
-</div>
-<pre><code>$ docker scout cves ubuntu:latest</code></pre>
-</div>
+### [📖 Continue Beginner Track →](./beginners/README.md)
 
-<div class="card feature-card">
-<div class="feature-icon">🚀</div>
-<h3>Docker Init</h3>
-<p><strong>Project Bootstrapping</strong></p>
-<p>Generate optimized Dockerfiles and Compose files for your projects.</p>
-<div class="card-links">
-<a href="https://github.com/dockersamples/docker-init-demos">📚 5 Labs</a>
-<a href="https://github.com/dockersamples/docker-init-demos/tree/main/python">🐍 Python</a>
-</div>
-<pre><code>$ docker init</code></pre>
-</div>
+**Topics Covered:**
 
-<div class="card feature-card">
-<div class="feature-icon">🔧</div>
-<h3>Docker Extensions</h3>
-<p><strong>Enhance Docker Desktop</strong></p>
-<p>Extend Docker Desktop with powerful community-built tools and integrations.</p>
-<div class="card-links">
-<a href="https://github.com/collabnix/docker-community-extensions">📚 1 Lab</a>
-<a href="./workshop/dockerdesktop/README.md">🖥️ Desktop</a>
-</div>
-</div>
+**🏗️ Getting Started with Docker Images**
+- [Running Hello World Example](https://collabnix.github.io/dockerlabs/beginners/helloworld/) 
+- [Working with Docker Image](https://collabnix.github.io/dockerlabs/beginners/workingwithdockerimage.html)
+- [Saving Images and Containers as Tar Files for Sharing](http://dockerlabs.collabnix.com/beginners/saving-images-as-tar/)
+- [Building Your First Alpine Docker Image and Push it to DockerHub](https://collabnix.github.io/dockerlabs/beginners/building-your-first-alpine-container.html)
 
-<div class="card feature-card">
-<div class="feature-icon">⚡</div>
-<h3>Compose Watch</h3>
-<p><strong>Development Workflows</strong></p>
-<p>Auto-sync and rebuild containers during development for faster iteration.</p>
-<div class="card-links">
-<a href="https://github.com/dockersamples/docker-init-demos/tree/main/python/compose-watch">📚 1 Lab</a>
-<a href="https://github.com/ajeetraina/compose-include">📦 Include</a>
-</div>
-</div>
+**🔧 Container Management**
+- [Accessing the Container Shell](http://dockerlabs.collabnix.com/beginners/accessing-the-container.html)
+- [Running a Command inside running Container](http://dockerlabs.collabnix.com/beginners/running-command-inside-running-container.html)
+- [Managing Docker Containers](http://dockerlabs.collabnix.com/beginners/managing-containers.html)
 
-</div>
+**📄 Dockerfile Mastery**
+- [What is Dockerfile](https://dockerlabs.collabnix.com/beginners/dockerfile/Writing-dockerfile.html#what-is-a-dockerfile)
+- [Understanding Layering Concept with Dockerfile](https://dockerlabs.collabnix.com/beginners/dockerfile/Layering-Dockerfile.html)
+- 17 Hands-on Labs covering all Dockerfile instructions (ADD, COPY, CMD, ENTRYPOINT, WORKDIR, RUN, ARG, ENV, VOLUME, EXPOSE, LABEL, ONBUILD, HEALTHCHECK, SHELL, USER)
+
+**💾 Data & Networking**
+- [Managing volumes through Docker CLI](https://collabnix.github.io/dockerlabs/beginners/volume/managing-volumes-via-docker-cli.html)
+- [Creating Volume Mount from docker run command](https://collabnix.github.io/dockerlabs/beginners/volume/creating-volume-mount-from-dockercli.html)
+- [Docker Networking Basics](http://dockerlabs.collabnix.com/beginners/using-docker-network.html)
 
 ---
 
-## 🌐 Real-World Applications
+## 🎯 Intermediate Track  
+*Ready to level up your Docker skills*
 
-<div class="app-cards">
+**What you'll learn:** Multi-container applications, Docker Compose, networking, and development workflows
 
-<div class="card app-card">
-<h3>🐍 Python/Django</h3>
-<div class="app-links">
-<a href="./solution/django-postgres/readme.md">Django + PostgreSQL</a>
-<a href="https://github.com/docker/awesome-compose/tree/master/flask-redis">Flask + Redis</a>
-</div>
-</div>
+### Multi-Container Applications
+Real applications rarely consist of just one container. Let's build a web app with a database using Docker Compose:
 
-<div class="card app-card">
-<h3>⚛️ React Apps</h3>
-<div class="app-links">
-<a href="https://github.com/docker/awesome-compose/tree/master/react-java-mysql">React + Spring + MySQL</a>
-<a href="https://github.com/docker/awesome-compose/tree/master/react-express-mysql">React + Express + MySQL</a>
-</div>
-</div>
+```yaml
+# docker-compose.yml
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_PASSWORD: mypassword
+```
 
-<div class="card app-card">
-<h3>🐹 Golang</h3>
-<div class="app-links">
-<a href="https://github.com/docker/awesome-compose/tree/master/nginx-golang-mysql">Go + NGINX + MySQL</a>
-<a href="./beginners/httpserver_go_module_and_docker.md">Go Modules</a>
-</div>
-</div>
+```bash
+$ docker-compose up
+```
 
-<div class="card app-card">
-<h3>☕ Java/Spring</h3>
-<div class="app-links">
-<a href="https://github.com/docker/awesome-compose/tree/master/spring-postgres">Spring + PostgreSQL</a>
-<a href="https://github.com/docker/awesome-compose/tree/master/sparkjava-mysql">Spark + MySQL</a>
-</div>
-</div>
+**What's happening here?** Docker Compose is orchestrating two containers: your web application and a PostgreSQL database, handling networking between them automatically.
 
-<div class="card app-card">
-<h3>📊 Monitoring</h3>
-<div class="app-links">
-<a href="./play-with-docker/docker-prometheus-swarm/README.md">Prometheus + Swarm</a>
-<a href="./play-with-docker/ELK/README.md">ELK Stack</a>
-</div>
-</div>
+### [📖 Continue Intermediate Track →](./intermediate/README.md)
 
-<div class="card app-card">
-<h3>🗄️ Databases</h3>
-<div class="app-links">
-<a href="https://github.com/docker/awesome-compose/tree/master/nginx-flask-mongo">MongoDB</a>
-<a href="https://github.com/collabnix/dockerlabs/tree/master/solution/node-mongo-docker">Node + Mongo</a>
-</div>
-</div>
+**Topics Covered:**
 
-</div>
+**🐳 Docker Compose Deep Dive**
+- [Introduction to Docker Compose](http://dockerlabs.collabnix.com/intermediate/docker-compose/)
+- [Dockerfile Vs Docker compose](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Difference_between_dockerfile_and_docker_compose.html)
+- 22 Hands-on Labs covering all Compose commands (version, help, config, build, pull, push, up, images, ps, stop, start, restart, pause, unpause, logs, port, run, scale, exec, kill, rm, down)
+- [Create first docker compose file with nginx and mysql](http://dockerlabs.collabnix.com/intermediate/workshop/DockerCompose/Create_first_docker-compose_file_with_ngnix_and_mysql.html)
+- [A Simple Wordpress Application using Docker Compose](https://github.com/collabnix/dockerlabs/blob/master/intermediate/workshop/DockerCompose/single-node-wordpress.md)
+
+**🌐 Docker Swarm Orchestration**
+- [What is Docker Swarm](http://dockerlabs.collabnix.com/intermediate/workshop/what-is-docker-swarm.html)
+- [Docker Swarm Terminology](http://dockerlabs.collabnix.com/intermediate/workshop/Docker-Swarm-Terminology.html)
+- [Creating 5-Node Docker Swarm Cluster](http://dockerlabs.collabnix.com/intermediate/workshop/getting-started-with-swarm.html)
+- 7 Hands-on Labs covering overlay networks, service deployment, scaling, and node management
+
+**🔗 Advanced Networking**
+- [Docker Overlay Networking](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%231:Docker_Overlay_Networking.html)
+- [Service Discovery & Routing Mesh](http://dockerlabs.collabnix.com/intermediate/workshop/networking/Lab%20%235_Test_Service_Discovery.html)
+- [MacVLAN Implementation](http://dockerlabs.collabnix.com/intermediate/workshop/networking/lab7-macvlan.html)
 
 ---
 
-## 📚 Learning Resources
+## 🚀 Advanced Track
+*Master Docker for production environments*
 
-<div class="resource-cards">
+**What you'll learn:** Security, orchestration, performance optimization, and production deployment
 
-<div class="card resource-card">
-<div class="resource-icon">📖</div>
-<h3>Essential Guides</h3>
-<ul>
-<li><a href="./docker/cheatsheet/README.md">Docker Cheatsheet</a></li>
-<li><a href="./docker/dca.md">Certification Prep</a></li>
-<li><a href="./docker/docker-interview-questions.md">Interview Questions</a></li>
-<li><a href="./beginners/README.md">Concepts Guide</a></li>
-</ul>
-</div>
+### Container Security
+Security should never be an afterthought. Let's scan our images for vulnerabilities using Docker Scout:
 
-<div class="card resource-card">
-<div class="resource-icon">🔒</div>
-<h3>Security & Best Practices</h3>
-<ul>
-<li><a href="http://dockerlabs.collabnix.com/advanced/security/trust/README.html">Content Trust (8 labs)</a></li>
-<li><a href="http://dockerlabs.collabnix.com/advanced/security/secrets/">Secrets Management (4 labs)</a></li>
-<li><a href="http://dockerlabs.collabnix.com/advanced/security/scanning/">Vulnerability Scanning</a></li>
-<li><a href="./security/Running-Containers-as-ROOT.md">Security Guidelines</a></li>
-</ul>
-</div>
+```bash
+$ docker scout cves ubuntu:latest
+```
 
-<div class="card resource-card">
-<div class="resource-icon">🏭</div>
-<h3>Industry Use Cases</h3>
-<ul>
-<li><a href="https://www.docker.com/products/ai-ml-development/">AI/ML Development</a></li>
-<li><a href="https://collabnix.com/5-benefits-of-docker-for-the-finance-and-operations/">Financial Services</a></li>
-<li><a href="https://collabnix.com/5-benefits-of-docker-for-the-healthcare-industry/">Healthcare</a></li>
-<li><a href="https://www.docker.com/products/ide/">Developer IDEs</a></li>
-</ul>
-</div>
+**Why this matters:** In production, vulnerable containers can be entry points for attackers. Docker Scout helps identify and fix security issues before deployment.
 
-<div class="card resource-card">
-<div class="resource-icon">📰</div>
-<h3>Latest Blog Posts</h3>
-<ul>
-<li><a href="https://collabnix.com/docker-genai-stack-on-windows-using-docker-desktop/">GenAI Stack on Windows</a></li>
-<li><a href="https://collabnix.com/a-first-look-at-docker-scout-a-software-supply-chain-security-for-developers/">Docker Scout Guide</a></li>
-<li><a href="https://collabnix.com/docker-init-for-go-developers/">Docker Init for Go</a></li>
-<li><a href="https://collabnix.com/how-to-integrate-docker-scout-with-github-actions/">Scout + GitHub Actions</a></li>
-</ul>
-</div>
+### [📖 Continue Advanced Track →](./advanced/README.md)
 
-</div>
+**Topics Covered:**
+
+**🔒 Docker Security**
+- [Docker Content Trust](http://dockerlabs.collabnix.com/advanced/security/trust/README.html) - 8 Labs covering image signing and verification
+- [Docker Secrets Management](http://dockerlabs.collabnix.com/advanced/security/secrets/) - 4 Labs on managing sensitive data
+- [Docker Network Security](http://dockerlabs.collabnix.com/advanced/security/networking/) - Encrypted overlay networks
+- [Security Scanning](http://dockerlabs.collabnix.com/advanced/security/scanning/) - Vulnerability assessment
+- [Swarm Mode Security](http://dockerlabs.collabnix.com/advanced/security/swarm/) - Production cluster security
 
 ---
 
-## 🤝 Join Our Community
+## 🛠️ Latest Docker Features & Developer Tools
 
-<div class="community-cards">
+### Docker Scout - Software Supply Chain Security
+Scan your containers for vulnerabilities and get actionable insights:
 
-<div class="card community-card discord">
-<div class="community-icon">💬</div>
-<h3>Discord</h3>
-<p><strong>2,300+ members</strong></p>
-<p>Real-time help and discussions</p>
-<a href="https://discord.gg/QEkCXAXYSe" class="community-button">Join Discord</a>
-</div>
+```bash
+$ docker scout quickview
+$ docker scout cves
+$ docker scout recommendations
+```
 
-<div class="card community-card slack">
-<div class="community-icon">📱</div>
-<h3>Slack</h3>
-<p><strong>9,000+ members</strong></p>
-<p>Professional DevOps community</p>
-<a href="https://launchpass.com/collabnix" class="community-button">Join Slack</a>
-</div>
+**Scout Resources:**
+- [Download Docker Scout Cheatsheet](https://www.docker.com/resources/scout-cheat-sheet/)
+- [Docker Scout Community Repository](https://github.com/collabnix/docker-scout-community)
+- [Integrate Scout with GitHub Actions](https://docs.docker.com/scout/integrations/ci/gha/)
 
-<div class="card community-card twitter">
-<div class="community-icon">🐦</div>
-<h3>Twitter</h3>
-<p><strong>Latest Updates</strong></p>
-<p>Tips, news, and announcements</p>
-<a href="https://twitter.com/collabnix" class="community-button">Follow Us</a>
-</div>
+### Docker Init - Bootstrap Your Projects
+Docker now includes a tool to generate optimized Dockerfiles and Compose files:
 
-<div class="card community-card github">
-<div class="community-icon">⭐</div>
-<h3>GitHub</h3>
-<p><strong>Contribute & Share</strong></p>
-<p>Help improve DockerLabs</p>
-<a href="./CONTRIBUTING.md" class="community-button">Contribute</a>
-</div>
+```bash
+$ docker init
+```
 
-</div>
+**Try it with different languages:**
+- [Python Projects](https://github.com/dockersamples/docker-init-demos/tree/main/python)
+- [Node.js Projects](https://github.com/dockersamples/docker-init-demos)  
+- [Go Projects](https://github.com/dockersamples/docker-init-demos/tree/main/go)
+- [Rust Projects](https://github.com/dockersamples/docker-init-demos/tree/main/rust)
+- [ASP.NET Projects](https://github.com/dockersamples/docker-init-demos/tree/main/dotnet)
+- [PHP Projects](https://github.com/dockersamples/docker-init-demos/tree/main/php/app)
 
----
+### Docker Desktop Features
+- [Docker Dashboard, Dev Environments, Extensions](./workshop/dockerdesktop/README.md)
+- [Docker Extensions Development](https://github.com/collabnix/docker-community-extensions)
 
-## 👥 Core Contributors
-
-<div class="contributors-grid">
-
-| [<img src="https://avatars1.githubusercontent.com/u/313480?s=400&v=4" width="60px;" alt="Ajeet Singh Raina"/><br /><sub><b>Ajeet Singh Raina</b></sub>](https://github.com/ajeetraina) | [<img src="https://avatars1.githubusercontent.com/u/21982562?s=460&v=4" width="60px;" alt="Sangam Biradar"/><br /><sub><b>Sangam Biradar</b></sub>](https://github.com/sangam14) | [<img src="https://avatars0.githubusercontent.com/u/7204666?s=400&v=4" width="60px;" alt="Savio Mathew"/><br /><sub><b>Savio Mathew</b></sub>](https://github.com/saviovettoor) | [<img src="https://avatars1.githubusercontent.com/u/8190114?s=400&v=4" width="60px;" alt="Saiyam Pathak"/><br /><sub><b>Saiyam Pathak</b></sub>](https://github.com/saiyam1814) |
-|:---:|:---:|:---:|:---:|
-| [<img src="https://avatars2.githubusercontent.com/u/38501348?s=400&v=4" width="60px;" alt="Apurva Bhandari"/><br /><sub><b>Apurva Bhandari</b></sub>](https://github.com/apurvabhandari) | [<img src="https://avatars2.githubusercontent.com/u/25828217?s=400&v=4" width="60px;" alt="Sarkar Tathagata"/><br /><sub><b>Sarkar Tathagata</b></sub>](https://github.com/amitatha82) | [<img src="https://avatars2.githubusercontent.com/u/33524591?s=400&v=4" width="60px;" alt="Prashansa K"/><br /><sub><b>Prashansa K</b></sub>](https://github.com/Prashansa-K) | [<img src="https://avatars1.githubusercontent.com/u/34628205?s=400&v=4" width="60px;" alt="Wikitops"/><br /><sub><b>Wikitops</b></sub>](https://github.com/wikitops) |
-
-</div>
+### Modern Development Workflows
+- [Compose Watch](https://github.com/dockersamples/docker-init-demos/tree/main/python/compose-watch) - Auto-sync and rebuild
+- [Compose Include](https://github.com/ajeetraina/compose-include) - Modular compose files
+- [Compose Profiles](https://github.com/ajeetraina/compose-demos/blob/main/wordpress/profile/README.md) - Environment-specific configurations
 
 ---
 
-## 🏆 Success Stories
+## 🌐 Industry Use Cases & Real-World Applications
 
-<div class="testimonial-cards">
+### Sample Applications
+Explore our curated collection of real-world applications built with Docker:
 
-<div class="card testimonial-card">
-<div class="quote">"DockerLabs helped me land my first DevOps job. The hands-on approach made all the difference."</div>
-<div class="author">— DevOps Engineer</div>
-</div>
+**Web Frameworks:**
 
-<div class="card testimonial-card">
-<div class="quote">"Our entire team went through the intermediate track. It standardized our Docker knowledge across the organization."</div>
-<div class="author">— Development Team Lead</div>
-</div>
+| Python/Django | Reactjs | Golang | Java/Spring |
+|:---|:---|:---|:---|
+| [Docker + Django + PostgreSQL](./solution/django-postgres/readme.md) | [React + Spring + MySQL](https://github.com/docker/awesome-compose/tree/master/react-java-mysql) | [Go + NGINX + MySQL](https://github.com/docker/awesome-compose/tree/master/nginx-golang-mysql) | [Spring + PostgreSQL](https://github.com/docker/awesome-compose/tree/master/spring-postgres) |
+| [Python + Flask + Redis](https://github.com/docker/awesome-compose/tree/master/flask-redis) | [React + Express + MySQL](https://github.com/docker/awesome-compose/tree/master/react-express-mysql) | [Go + NGINX + PostgreSQL](https://github.com/docker/awesome-compose/tree/master/nginx-golang-postgres) | [Java Spark + MySQL](https://github.com/docker/awesome-compose/tree/master/sparkjava-mysql) |
 
-</div>
+**Database Solutions:**
 
----
+| PostgreSQL | MongoDB | MySQL |
+|:---|:---|:---|
+| [Docker + Django + PostgreSQL](./solution/django-postgres/readme.md) | [NGINX + Flask + MongoDB](https://github.com/docker/awesome-compose/tree/master/nginx-flask-mongo) | [NGINX + ASP.NET + MySQL](https://github.com/docker/awesome-compose/tree/master/nginx-aspnet-mysql) |
+| | [NodeJS + MongoDB](https://github.com/collabnix/dockerlabs/tree/master/solution/node-mongo-docker) | |
 
-## 🚀 What's Next?
+**Monitoring & Logging:**
 
-<div class="next-steps-cards">
+| Monitoring | Logging | Testing |
+|:---|:---|:---|
+| [Docker + Prometheus Stack + Docker Swarm](./play-with-docker/docker-prometheus-swarm/README.md) | [Docker + Elasticsearch + Logstash + Kibana + Docker Swarm](./play-with-docker/ELK/README.md) | [Docker + Apache Jmeter + Docker Swarm Mode](./play-with-docker/jmeter-docker/README.md) |
+| | [Elasticsearch + Logstash + Kibana](https://github.com/docker/awesome-compose/tree/master/elasticsearch-logstash-kibana) | |
 
-<div class="card next-card">
-<div class="step-number">1</div>
-<h3>Choose Your Path</h3>
-<p>Start with the track that matches your experience level</p>
-<div class="path-links">
-<a href="./beginners/README.md">🔰 Beginner</a>
-<a href="./intermediate/README.md">🎯 Intermediate</a>
-<a href="./advanced/README.md">🚀 Advanced</a>
-</div>
-</div>
-
-<div class="card next-card">
-<div class="step-number">2</div>
-<h3>Join the Community</h3>
-<p>Connect with 11,000+ Docker learners worldwide</p>
-<div class="path-links">
-<a href="https://discord.gg/QEkCXAXYSe">💬 Discord</a>
-<a href="https://launchpass.com/collabnix">📱 Slack</a>
-</div>
-</div>
-
-<div class="card next-card">
-<div class="step-number">3</div>
-<h3>Explore Latest Features</h3>
-<p>Try the newest Docker tools and capabilities</p>
-<div class="path-links">
-<a href="https://github.com/collabnix/docker-scout-community">🔍 Scout</a>
-<a href="https://github.com/dockersamples/docker-init-demos">🚀 Init</a>
-</div>
-</div>
-
-</div>
+### Industry Applications
+- [Docker for AI/ML Development](https://www.docker.com/products/ai-ml-development/)
+- [Docker for Financial Services](https://collabnix.com/5-benefits-of-docker-for-the-finance-and-operations/)
+- [Docker for Healthcare](https://collabnix.com/5-benefits-of-docker-for-the-healthcare-industry/)
 
 ---
 
-<div align="center">
+## 📚 Featured Resources & Learning Materials
 
-## 📄 License
+### Latest Blog Posts and Articles
+- [Docker GenAI Stack on Windows using Docker Desktop](https://collabnix.com/docker-genai-stack-on-windows-using-docker-desktop/)
+- [A First Look at Docker Scout – A Software Supply Chain Security for Developers](https://collabnix.com/a-first-look-at-docker-scout-a-software-supply-chain-security-for-developers/)
+- [Getting Started with GenAI Stack powered with Docker, LangChain, Neo4j and Ollama](https://collabnix.com/getting-started-with-genai-stack-powered-with-docker-langchain-neo4j-and-ollama/)
+- [Docker Init for Go Developers](https://collabnix.com/docker-init-for-go-developers/)
+- [What is Docker Compose Include and What problem does it solve?](https://collabnix.com/what-is-docker-compose-include-and-what-problem-does-it-solve/)
+- [How to Integrate Docker Scout with GitHub Actions](https://collabnix.com/how-to-integrate-docker-scout-with-github-actions/)
+
+### Quick Reference Materials
+- [Docker Cheatsheet](./docker/cheatsheet/README.md)
+- [Docker Certificate Associate Exam Preparation](./docker/dca.md)
+- [Docker Interview Questions](./docker/docker-interview-questions.md)
+- [Concepts and Terminologies Guide](./beginners/README.md)
+
+### Containerd Resources
+- [What is Containerd and what problems does it solve](https://collabnix.com/what-is-containerd-and-what-does-it-solve/)
+- [Containerd and Kubernetes](https://collabnix.com/containerd-and-kubernetes-how-are-they-related/)
+- [How To Run Containerd On Docker Desktop](https://collabnix.com/how-to-run-containerd-in-docker-desktop/)
+- [Getting Started With Containerd 2.0](https://collabnix.com/getting-started-with-containerd-2-0/)
+
+---
+
+## 🤝 Community
+
+### Join 11,000+ Docker Learners
+
+**[💬 Discord](https://discord.gg/QEkCXAXYSe)** - Get real-time help (2,300+ members)  
+**[📱 Slack](https://launchpass.com/collabnix)** - Professional discussions (9,000+ members)  
+**[🐦 Twitter](https://twitter.com/collabnix)** - Latest updates and tips  
+
+### Contribute to DockerLabs
+
+This is a community-driven project. Here's how you can help:
+
+- **Fix a typo** - Even small improvements matter
+- **Add a lab** - Share your Docker knowledge  
+- **Translate content** - Help non-English speakers
+- **Report issues** - Help us improve
+
+**[📖 Contributing Guide →](./CONTRIBUTING.md)**
+
+### Success Stories
+
+*"DockerLabs helped me land my first DevOps job. The hands-on approach made all the difference."*  
+— **Community Member**
+
+*"Our entire team went through the intermediate track. It standardized our Docker knowledge."*  
+— **Development Team Lead**
+
+---
+
+## 👥 Governance & Core Contributors
+
+Dockerlabs is an independent community project founded by [Ajeet Singh Raina](https://github.com/ajeetraina), a [Docker Captain from India](https://www.docker.com/captains/ajeet-singh-raina) & Docker Community Leader which is now being built & shaped by a growing community of contributors across the globe.
+
+| [<img src="https://avatars1.githubusercontent.com/u/313480?s=400&v=4" width="48px;" alt="Ajeet Singh Raina"/><br /><sub><b> Ajeet Singh Raina</b></sub>](https://github.com/ajeetraina)<br /> | [<img src="https://avatars1.githubusercontent.com/u/21982562?s=460&v=4" width="48px;" alt="Sangam Biradar"/><br /><sub><b>Sangam Biradar</b></sub>](https://github.com/sangam14)<br /> | [<img src="https://avatars0.githubusercontent.com/u/7204666?s=400&v=4" width="48px;" alt="Savio Mathew"/><br /><sub><b>Savio Mathew</b></sub>](https://github.com/saviovettoor)<br /> | [<img src="https://avatars1.githubusercontent.com/u/8190114?s=400&v=4" width="48px;" alt="Saiyam Pathak"/><br /><sub><b>Saiyam Pathak</b></sub>](https://github.com/saiyam1814)<br /> | [<img src="https://avatars2.githubusercontent.com/u/38501348?s=400&v=4" width="48px;" alt="Apurva Bhandari"/><br /><sub><b>Apurva Bhandari</b></sub>](https://github.com/apurvabhandari)<br /> | [<img src="https://avatars2.githubusercontent.com/u/25828217?s=400&v=4" width="48px;" alt="Sarkar Tathagata"/><br /><sub><b>Sarkar Tathagata</b></sub>](https://github.com/amitatha82)<br /> | [<img src="https://avatars2.githubusercontent.com/u/33524591?s=400&v=4" width="48px;" alt="Prashansa K"/><br /><sub><b>Prashansa K</b></sub>](https://github.com/Prashansa-K)<br /> |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [<img src="https://avatars1.githubusercontent.com/u/34628205?s=400&v=4" width="48px;" alt="Wikitops"/><br /><sub><b>Wikitops</b></sub>](https://github.com/wikitops)<br /> | [<img src="https://avatars0.githubusercontent.com/u/20920080?s=400&v=4" width="48px;" alt="Akshit Grover"/><br /><sub><b>Akshit Grover</b></sub>](https://github.com/akshitgrover)<br /> | [<img src="https://avatars3.githubusercontent.com/u/18344557?s=400&v=4" width="48px;" alt="Ameya Agashe"/><br /><sub><b>Ameya Agashe</b></sub>](https://github.com/ameyaagashe)<br /> | [<img src="https://avatars1.githubusercontent.com/u/39425180?s=400&v=4" width="48px;" alt="Bala"/><br /><sub><b>Bala</b></sub>](https://github.com/balasu)<br /> | | | |
+
+---
+
+## What's Next?
+
+1. **[Start with Basics](./beginners/README.md)** - If you're new to Docker
+2. **[Jump to Intermediate](./intermediate/README.md)** - If you know Docker basics  
+3. **[Explore Latest Features](#latest-docker-features--developer-tools)** - Check out Scout, Init, and Extensions
+4. **[Join Community](#community)** - Connect with other learners
+
+---
+
+## License
 
 [Apache License 2.0](./LICENSE.md)
+
+---
+
+<div align="center">
 
 **Built with ❤️ by the [Collabnix Community](https://collabnix.com)**
 
 *Help us improve this tutorial by [contributing](./CONTRIBUTING.md) or [reporting issues](https://github.com/collabnix/dockerlabs/issues)*
 
+**[Proceed to Beginners Track >>](./beginners/README.md)**
+
 </div>
-
-<style>
-/* Card-based layout styles */
-.intro-cards, .track-cards, .quickstart-cards, .feature-cards, .app-cards, .resource-cards, .community-cards, .next-steps-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.card {
-    background: white;
-    border: 1px solid #e1e4e8;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.track-icon, .feature-icon, .resource-icon, .community-icon {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.card-meta {
-    display: flex;
-    gap: 1rem;
-    margin: 1rem 0;
-    font-size: 0.9rem;
-    color: #6a737d;
-}
-
-.card-button, .community-button {
-    display: inline-block;
-    background: #0366d6;
-    color: white !important;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
-    margin-top: 1rem;
-}
-
-.card-button:hover, .community-button:hover {
-    background: #0256cc;
-    text-decoration: none;
-}
-
-.beginner { border-left: 4px solid #28a745; }
-.intermediate { border-left: 4px solid #ffc107; }
-.advanced { border-left: 4px solid #dc3545; }
-
-.discord { border-left: 4px solid #7289da; }
-.slack { border-left: 4px solid #4a154b; }
-.twitter { border-left: 4px solid #1da1f2; }
-.github { border-left: 4px solid #333; }
-
-.step-number {
-    background: #0366d6;
-    color: white;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.path-links {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-
-.path-links a {
-    background: #f6f8fa;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-.testimonial-card {
-    background: #f6f8fa;
-    border-left: 4px solid #0366d6;
-}
-
-.quote {
-    font-style: italic;
-    margin-bottom: 1rem;
-}
-
-.author {
-    font-weight: 500;
-    color: #6a737d;
-}
-
-.contributors-grid {
-    text-align: center;
-}
-
-.contributors-grid img {
-    border-radius: 50%;
-    margin: 0.5rem;
-}
-
-@media (max-width: 768px) {
-    .intro-cards, .track-cards, .quickstart-cards, .feature-cards, .app-cards, .resource-cards, .community-cards, .next-steps-cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .path-links {
-        flex-direction: column;
-    }
-}
-</style>
